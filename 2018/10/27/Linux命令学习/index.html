@@ -5,18 +5,18 @@
   
   <title>Linux命令学习 | 知易行难</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="ls查看目录下的内容  常用选项 -a：不忽略以点(.)开头的文件。 以点开头的文件通常是隐藏文件。 cat查看文件 tip：当后面没有接文件时，会读取标准输入。（没发现有什么用) mv移动或者重命名文件 语法：-- mv 源文件名 新文件名  重命名      --mv 文件名 目录  移动 touch改变文件时间戳 当你touch一个存在文件时，将会系统会记录文件最后一次变动的时间。 当你to">
+  <meta name="description" content="ls    查看目录下的内容     常用选项     -a：不忽略以点(.)开头的文件。 以点开头的文件通常是隐藏文件。   cat    查看文件     tip：当后面没有接文件时，会读取标准输入。（没发现有什么用)   mv    移动或者重命名文件     语法: mv 源文件名 新文件名  重命名           mv 文件名 目录  移动   touch    改变文件时间戳">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux命令学习">
 <meta property="og:url" content="http://yoursite.com/2018/10/27/Linux命令学习/index.html">
 <meta property="og:site_name" content="知易行难">
-<meta property="og:description" content="ls查看目录下的内容  常用选项 -a：不忽略以点(.)开头的文件。 以点开头的文件通常是隐藏文件。 cat查看文件 tip：当后面没有接文件时，会读取标准输入。（没发现有什么用) mv移动或者重命名文件 语法：-- mv 源文件名 新文件名  重命名      --mv 文件名 目录  移动 touch改变文件时间戳 当你touch一个存在文件时，将会系统会记录文件最后一次变动的时间。 当你to">
+<meta property="og:description" content="ls    查看目录下的内容     常用选项     -a：不忽略以点(.)开头的文件。 以点开头的文件通常是隐藏文件。   cat    查看文件     tip：当后面没有接文件时，会读取标准输入。（没发现有什么用)   mv    移动或者重命名文件     语法: mv 源文件名 新文件名  重命名           mv 文件名 目录  移动   touch    改变文件时间戳">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-27T17:03:00.353Z">
+<meta property="og:updated_time" content="2018-10-28T05:38:51.764Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux命令学习">
-<meta name="twitter:description" content="ls查看目录下的内容  常用选项 -a：不忽略以点(.)开头的文件。 以点开头的文件通常是隐藏文件。 cat查看文件 tip：当后面没有接文件时，会读取标准输入。（没发现有什么用) mv移动或者重命名文件 语法：-- mv 源文件名 新文件名  重命名      --mv 文件名 目录  移动 touch改变文件时间戳 当你touch一个存在文件时，将会系统会记录文件最后一次变动的时间。 当你to">
+<meta name="twitter:description" content="ls    查看目录下的内容     常用选项     -a：不忽略以点(.)开头的文件。 以点开头的文件通常是隐藏文件。   cat    查看文件     tip：当后面没有接文件时，会读取标准输入。（没发现有什么用)   mv    移动或者重命名文件     语法: mv 源文件名 新文件名  重命名           mv 文件名 目录  移动   touch    改变文件时间戳">
   
     <link rel="alternate" href="/atom.xml" title="知易行难" type="application/atom+xml">
   
@@ -102,20 +102,30 @@
                     </div>
                 </h1>
 
-                <h2 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h2><pre><code>查看目录下的内容
+                <h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><pre class=" language-block"><code class="language-block">    查看目录下的内容
+    常用选项
+    -a：不忽略以点(.)开头的文件。 以点开头的文件通常是隐藏文件。
+</code></pre>
+<hr>
+<h3 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h3><pre class=" language-block"><code class="language-block">    查看文件
+    tip：当后面没有接文件时，会读取标准输入。（没发现有什么用)
+</code></pre>
+<hr>
+<h3 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h3><pre class=" language-block"><code class="language-block">    移动或者重命名文件
+    语法: mv 源文件名 新文件名  重命名
+          mv 文件名 目录  移动
+</code></pre>
+<hr>
+<h3 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h3><pre class=" language-block"><code class="language-block">    改变文件时间戳
+    当你touch一个存在文件时，将会系统会记录文件最后一次变动的时间。
+    当你touch一个不存在的文件是，会创建文件。
+</code></pre>
+<hr>
+<blockquote>
+<p>想了解更多命令可以去<a href="explainshell.com/explain">explainshell.com</a> 查看.</p>
+</blockquote>
+<hr>
 
-常用选项
--a：不忽略以点(.)开头的文件。 以点开头的文件通常是隐藏文件。
-</code></pre><h2 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h2><pre><code>查看文件
-tip：当后面没有接文件时，会读取标准输入。（没发现有什么用)
-</code></pre><h2 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h2><pre><code>移动或者重命名文件
-语法：-- mv 源文件名 新文件名  重命名
-     --mv 文件名 目录  移动
-</code></pre><h2 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h2><pre><code>改变文件时间戳
-当你touch一个存在文件时，将会系统会记录文件最后一次变动的时间。
-当你touch一个不存在的文件是，会创建文件。
-</code></pre><hr>
-<h2 id="想了解更多命令可以去explainshell-com-查看"><a href="#想了解更多命令可以去explainshell-com-查看" class="headerlink" title="想了解更多命令可以去explainshell.com 查看."></a>想了解更多命令可以去<a href="explainshell.com/explain">explainshell.com</a> 查看.</h2>
             <!-- / the end of articles -->
         </div>
         <!-- / left section -->
