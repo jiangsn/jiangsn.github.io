@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="知易行难">
 <meta property="og:description" content="左右布局在一个div中左右将两个div左右排放 .clearfix::after{     content: &quot;&quot;;     display: block;     clear: both; } .parent{     border:1px solid green; } .left{     width: 30%;     height:100px;     background-color:">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-12T12:36:39.138Z">
+<meta property="og:updated_time" content="2018-11-12T13:55:33.435Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS基本布局">
 <meta name="twitter:description" content="左右布局在一个div中左右将两个div左右排放 .clearfix::after{     content: &quot;&quot;;     display: block;     clear: both; } .parent{     border:1px solid green; } .left{     width: 30%;     height:100px;     background-color:">
@@ -161,22 +161,38 @@
 <span class="token punctuation">}</span>
 </code></pre>
 <h2 id="水平垂直居中"><a href="#水平垂直居中" class="headerlink" title="水平垂直居中"></a>水平垂直居中</h2><ul>
-<li>固定宽高<br>使用负值margin等于宽的和高的一半 ，然后使用padding：50% 。 具有很好的夸浏览器支持。<br><code>`</code>css<br>.box {<br> width:200px;<br> height: 200px;<br> border: 1px black solid;<br> position:relative;<br>}<br>.one{<br>background:green;<br>width:50px;<br>height: 50px;<br>margin: -25px 0px 0px -25px;<br>position:absolute;<br>top:50%;<br>left:50%;<br>}</li>
+<li>固定宽高<br>使用负值margin等于宽的和高的一半 ，然后使用padding：50% 。 具有很好的夸浏览器支持。</li>
 </ul>
-<pre><code> - 不定宽高
-   在支持 transform: translate(-50%, -50%)属性
-
-```css
-main {
-  position: relative;
-}
-div {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-</code></pre><ul>
+<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.box</span> </span><span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span><span class="token number">200</span>px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">1</span>px black solid<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span>relative<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.one</span></span><span class="token punctuation">{</span>
+   <span class="token property">background</span><span class="token punctuation">:</span>green<span class="token punctuation">;</span>
+   <span class="token property">width</span><span class="token punctuation">:</span><span class="token number">50</span>px<span class="token punctuation">;</span>
+   <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">50</span>px<span class="token punctuation">;</span>
+   <span class="token property">margin</span><span class="token punctuation">:</span> -<span class="token number">25</span>px <span class="token number">0</span>px <span class="token number">0</span>px -<span class="token number">25</span>px<span class="token punctuation">;</span>
+   <span class="token property">position</span><span class="token punctuation">:</span>absolute<span class="token punctuation">;</span>
+   <span class="token property">top</span><span class="token punctuation">:</span><span class="token number">50%</span><span class="token punctuation">;</span>
+   <span class="token property">left</span><span class="token punctuation">:</span><span class="token number">50%</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>不定宽高<br> 在支持 transform: translate(-50%, -50%)属性</li>
+</ul>
+<pre class=" language-css"><code class="language-css"><span class="token selector">main </span><span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">div </span><span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translate</span><span class="token punctuation">(</span>-<span class="token number">50%</span>, -<span class="token number">50%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
 <li><p>可以使用flex嘛？</p>
 <pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.parent</span> </span><span class="token punctuation">{</span>
 <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
