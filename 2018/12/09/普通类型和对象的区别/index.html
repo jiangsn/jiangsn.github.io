@@ -5,18 +5,18 @@
   
   <title>普通类型和对象的区别 | 知易行难</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="js中的数据类型类型之间的转换(Null表示对象为空所以不能转换，undefined表示为未定义也不能转换) 类型转换string ，  toSting()  trick： &amp;#39;&amp;#39; + 任一类型 变成字符串;   window.string();  boolean 0，Nan,’’ ,null,undefined,为false  boolean(); trick： !! ; fals">
-<meta name="keywords" content="js">
+  <meta name="description" content="js中的数据类型类型之间的转换 Null表示对象为空所以不能转换，undefined表示为未定义也不能转换 类型转换string ，  toSting()    trick：    ‘’ + 任一类型 变成字符串;    window.string();  boolean 0，Nan,’’ ,null,undefined,为false  boolean();   trick：    !! ;fal">
+<meta name="keywords" content="JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="普通类型和对象的区别">
 <meta property="og:url" content="http://yoursite.com/2018/12/09/普通类型和对象的区别/index.html">
 <meta property="og:site_name" content="知易行难">
-<meta property="og:description" content="js中的数据类型类型之间的转换(Null表示对象为空所以不能转换，undefined表示为未定义也不能转换) 类型转换string ，  toSting()  trick： &amp;#39;&amp;#39; + 任一类型 变成字符串;   window.string();  boolean 0，Nan,’’ ,null,undefined,为false  boolean(); trick： !! ; fals">
+<meta property="og:description" content="js中的数据类型类型之间的转换 Null表示对象为空所以不能转换，undefined表示为未定义也不能转换 类型转换string ，  toSting()    trick：    ‘’ + 任一类型 变成字符串;    window.string();  boolean 0，Nan,’’ ,null,undefined,为false  boolean();   trick：    !! ;fal">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-09T07:39:46.765Z">
+<meta property="og:updated_time" content="2018-12-09T07:48:28.003Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="普通类型和对象的区别">
-<meta name="twitter:description" content="js中的数据类型类型之间的转换(Null表示对象为空所以不能转换，undefined表示为未定义也不能转换) 类型转换string ，  toSting()  trick： &amp;#39;&amp;#39; + 任一类型 变成字符串;   window.string();  boolean 0，Nan,’’ ,null,undefined,为false  boolean(); trick： !! ; fals">
+<meta name="twitter:description" content="js中的数据类型类型之间的转换 Null表示对象为空所以不能转换，undefined表示为未定义也不能转换 类型转换string ，  toSting()    trick：    ‘’ + 任一类型 变成字符串;    window.string();  boolean 0，Nan,’’ ,null,undefined,为false  boolean();   trick：    !! ;fal">
   
     <link rel="alternate" href="/atom.xml" title="知易行难" type="application/atom+xml">
   
@@ -99,29 +99,26 @@
                     <span style="color: #333;">普通类型和对象的区别</span>
                     <div class="sub header" style="color: #808080;">Publish: 2018/12/9 
                      &nbsp;&nbsp;
-                        <ul class="unstyled radius-tag -list"><li class="unstyled radius-tag -list-item"><a class="unstyled radius-tag -list-link" href="/tags/js/">js</a></li></ul>
+                        <ul class="unstyled radius-tag -list"><li class="unstyled radius-tag -list-item"><a class="unstyled radius-tag -list-link" href="/tags/JS/">JS</a></li></ul>
                     
                     </div>
                 </h1>
 
-                <h1 id="js中的数据类型"><a href="#js中的数据类型" class="headerlink" title="js中的数据类型"></a>js中的数据类型</h1><h2 id="类型之间的转换-Null表示对象为空所以不能转换，undefined表示为未定义也不能转换"><a href="#类型之间的转换-Null表示对象为空所以不能转换，undefined表示为未定义也不能转换" class="headerlink" title="类型之间的转换(Null表示对象为空所以不能转换，undefined表示为未定义也不能转换)"></a>类型之间的转换(Null表示对象为空所以不能转换，undefined表示为未定义也不能转换)</h2><ul>
+                <h1 id="js中的数据类型"><a href="#js中的数据类型" class="headerlink" title="js中的数据类型"></a>js中的数据类型</h1><h2 id="类型之间的转换"><a href="#类型之间的转换" class="headerlink" title="类型之间的转换"></a>类型之间的转换</h2><ul>
+<li>Null表示对象为空所以不能转换，undefined表示为未定义也不能转换</li>
 <li>类型转换string ， </li>
-<li>toSting() <blockquote>
-<p>trick：</p>
-<pre><code>&#39;&#39; + 任一类型 变成字符串;
-</code></pre><p>  window.string();</p>
+<li>toSting() </li>
+</ul>
+<blockquote>
+<p>trick：<br>    ‘’ + 任一类型 变成字符串;<br>    window.string();</p>
 </blockquote>
 <h2 id="boolean"><a href="#boolean" class="headerlink" title="boolean"></a>boolean</h2><ul>
 <li>0，Nan,’’ ,null,undefined,为false </li>
-<li>boolean();<blockquote>
-<p>trick：</p>
-<pre><code>!! ;
-</code></pre><p>falsy在Boolean上下文中认定可转换为false的值.</p>
+<li>boolean();</li>
+</ul>
+<blockquote>
+<p>trick：<br>    !! ;<br>falsy在Boolean上下文中认定可转换为false的值.</p>
 </blockquote>
-</li>
-</ul>
-</li>
-</ul>
 <h2 id="number"><a href="#number" class="headerlink" title="number"></a>number</h2><ul>
 <li>1.Number();</li>
 <li>2.parseInt(‘1’,10); 变成十进制数  ； 识别可识别的</li>
@@ -137,14 +134,14 @@
 </li>
 </ol>
 </li>
-<li><p>object</p>
-<h2 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h2></li>
+</ul>
+<h2 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h2><ul>
 <li>基本类型的 = 都是深拷贝</li>
-<li>对象拷贝<blockquote>
+<li>对象拷贝</li>
+</ul>
+<blockquote>
 <p>浅拷贝  赋值双方，改变一个另一个也改变。<br>深拷贝  赋值双方，改变一个另一个不该改变。</p>
 </blockquote>
-</li>
-</ul>
 
             <!-- / the end of articles -->
         </div>
