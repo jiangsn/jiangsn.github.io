@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>原型与原型链 | 知易行难</title>
+  <title>js数组 | 知易行难</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="全局对象 浏览器内置对象 window window属性分类： ECMASript规定（parseInt ，parseFloat，Number ，etc） ，浏览器自己实现的（alert，prompt，confirm，document，etc）。  原型和原型链 MDN的描述：每个对象拥有一个原型对象。对象以其原型为模板、从原型继承方法和属性。原型对象也可能拥有原型，并从中继承方法和属性，一层一层">
+  <meta name="description" content="a=[]; a.join 变成字符串  a.concat(b);  a.concat([]); 复制数组 a.map a.forEach(function(x,y){}) a.filter(function(x,y){}) a.reduce">
 <meta name="keywords" content="JS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="原型与原型链">
-<meta property="og:url" content="http://yoursite.com/2018/12/09/原型与原型链/index.html">
+<meta property="og:title" content="js数组">
+<meta property="og:url" content="http://yoursite.com/2018/12/12/js数组/index.html">
 <meta property="og:site_name" content="知易行难">
-<meta property="og:description" content="全局对象 浏览器内置对象 window window属性分类： ECMASript规定（parseInt ，parseFloat，Number ，etc） ，浏览器自己实现的（alert，prompt，confirm，document，etc）。  原型和原型链 MDN的描述：每个对象拥有一个原型对象。对象以其原型为模板、从原型继承方法和属性。原型对象也可能拥有原型，并从中继承方法和属性，一层一层">
+<meta property="og:description" content="a=[]; a.join 变成字符串  a.concat(b);  a.concat([]); 复制数组 a.map a.forEach(function(x,y){}) a.filter(function(x,y){}) a.reduce">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-09T12:31:06.437Z">
+<meta property="og:updated_time" content="2018-12-12T18:56:23.753Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="原型与原型链">
-<meta name="twitter:description" content="全局对象 浏览器内置对象 window window属性分类： ECMASript规定（parseInt ，parseFloat，Number ，etc） ，浏览器自己实现的（alert，prompt，confirm，document，etc）。  原型和原型链 MDN的描述：每个对象拥有一个原型对象。对象以其原型为模板、从原型继承方法和属性。原型对象也可能拥有原型，并从中继承方法和属性，一层一层">
+<meta name="twitter:title" content="js数组">
+<meta name="twitter:description" content="a=[]; a.join 变成字符串  a.concat(b);  a.concat([]); 复制数组 a.map a.forEach(function(x,y){}) a.filter(function(x,y){}) a.reduce">
   
     <link rel="alternate" href="/atom.xml" title="知易行难" type="application/atom+xml">
   
@@ -96,33 +96,25 @@
             <!-- Articles -->
                 
                 <h1 class="ts header">
-                    <span style="color: #333;">原型与原型链</span>
-                    <div class="sub header" style="color: #808080;">Publish: 2018/12/9 
+                    <span style="color: #333;">js数组</span>
+                    <div class="sub header" style="color: #808080;">Publish: 2018/12/12 
                      &nbsp;&nbsp;
                         <ul class="unstyled radius-tag -list"><li class="unstyled radius-tag -list-item"><a class="unstyled radius-tag -list-link" href="/tags/JS/">JS</a></li></ul>
                     
                     </div>
                 </h1>
 
-                <h2 id="全局对象"><a href="#全局对象" class="headerlink" title="全局对象"></a>全局对象</h2><ul>
-<li>浏览器内置对象</li>
-<li>window</li>
-<li>window属性分类： ECMASript规定（parseInt ，parseFloat，Number ，etc） ，浏览器自己实现的（alert，prompt，confirm，document，etc）。</li>
-</ul>
-<h2 id="原型和原型链"><a href="#原型和原型链" class="headerlink" title="原型和原型链"></a>原型和原型链</h2><ul>
-<li><p>MDN的描述：每个对象拥有一个原型对象。对象以其原型为模板、从原型继承方法和属性。原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)。</p>
+                <ul>
+<li>a=[];</li>
+<li><p>a.join 变成字符串</p>
 </li>
-<li><p>tip： 对象的原型是每个实例上都有的属性。</p>
+<li><p>a.concat(b);</p>
 </li>
-<li>构造函数的prototype属性，后者是构造函数的属性。</li>
-</ul>
-<blockquote>
-<p>  每个函数都有一个特殊的属性叫作原型（prototype),</p>
-</blockquote>
-<ul>
-<li><strong>proto</strong> : 大多数现代浏览器还是提供了一个直接访问的原型的属性。</li>
-<li>prototype：原型链中的“连接”被定义在一个内部属性中，在 JavaScript 语言标准中表示。</li>
-<li>constructor：用于构造此实例对象的构造函数。</li>
+<li>a.concat([]); 复制数组</li>
+<li>a.map</li>
+<li>a.forEach(function(x,y){})</li>
+<li>a.filter(function(x,y){})</li>
+<li>a.reduce</li>
 </ul>
 
             <!-- / the end of articles -->
@@ -157,16 +149,16 @@
         <hr/>
         <div class="next-prev-post-section">
             
-                <a href="/2018/12/12/js数组/" class="styled-border">
+                <a href="/2018/12/13/实现一个jQuery的API/" class="styled-border">
                     ←
-                    js数组
+                    实现一个jQuery的API
                     
                 </a>
             
             
-                <a href="/2018/12/09/普通类型和对象的区别/" class="styled-border">
+                <a href="/2018/12/09/原型与原型链/" class="styled-border">
                     
-                    普通类型和对象的区别
+                    原型与原型链
                     →
                 </a>
             
