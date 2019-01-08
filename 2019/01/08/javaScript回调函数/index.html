@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>手写ajax | 知易行难</title>
+  <title>javaScript回调函数 | 知易行难</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="手写ajax 使用XMLHttpRequest对象  window.ajax = function(options){   // url,method,headers,body,sucessFn,failFn   let url = options.url;   let method = options.method;   let headers = options.headers;   let">
-<meta name="keywords" content="ajax">
+  <meta name="description" content="回调函数 回调函数就是一段可执行的代码段。 在javaScript中函数也是对象的一中，将函数传递给另一个函数时，这个函数就是回调函数。  回调函数的特点  是一个闭包，就是说可以访问外层定义的变量。 回调函数中的this 是在回调函数调用时this的执行上下文并不是回调函数定义时的那个上下文，而是调用它的函数所在的上下文。  ##　 使用场景  异步编程。 事件监听、处理。 setTimeout">
+<meta name="keywords" content="callack">
 <meta property="og:type" content="article">
-<meta property="og:title" content="手写ajax">
-<meta property="og:url" content="http://yoursite.com/2019/01/08/手写ajax/index.html">
+<meta property="og:title" content="javaScript回调函数">
+<meta property="og:url" content="http://yoursite.com/2019/01/08/javaScript回调函数/index.html">
 <meta property="og:site_name" content="知易行难">
-<meta property="og:description" content="手写ajax 使用XMLHttpRequest对象  window.ajax = function(options){   // url,method,headers,body,sucessFn,failFn   let url = options.url;   let method = options.method;   let headers = options.headers;   let">
+<meta property="og:description" content="回调函数 回调函数就是一段可执行的代码段。 在javaScript中函数也是对象的一中，将函数传递给另一个函数时，这个函数就是回调函数。  回调函数的特点  是一个闭包，就是说可以访问外层定义的变量。 回调函数中的this 是在回调函数调用时this的执行上下文并不是回调函数定义时的那个上下文，而是调用它的函数所在的上下文。  ##　 使用场景  异步编程。 事件监听、处理。 setTimeout">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-08T14:47:06.768Z">
+<meta property="og:updated_time" content="2019-01-08T16:58:40.620Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="手写ajax">
-<meta name="twitter:description" content="手写ajax 使用XMLHttpRequest对象  window.ajax = function(options){   // url,method,headers,body,sucessFn,failFn   let url = options.url;   let method = options.method;   let headers = options.headers;   let">
+<meta name="twitter:title" content="javaScript回调函数">
+<meta name="twitter:description" content="回调函数 回调函数就是一段可执行的代码段。 在javaScript中函数也是对象的一中，将函数传递给另一个函数时，这个函数就是回调函数。  回调函数的特点  是一个闭包，就是说可以访问外层定义的变量。 回调函数中的this 是在回调函数调用时this的执行上下文并不是回调函数定义时的那个上下文，而是调用它的函数所在的上下文。  ##　 使用场景  异步编程。 事件监听、处理。 setTimeout">
   
     <link rel="alternate" href="/atom.xml" title="知易行难" type="application/atom+xml">
   
@@ -96,122 +96,31 @@
             <!-- Articles -->
                 
                 <h1 class="ts header">
-                    <span style="color: #333;">手写ajax</span>
+                    <span style="color: #333;">javaScript回调函数</span>
                     <div class="sub header" style="color: #808080;">Publish: 2019/1/8 
                      &nbsp;&nbsp;
-                        <ul class="unstyled radius-tag -list"><li class="unstyled radius-tag -list-item"><a class="unstyled radius-tag -list-link" href="/tags/ajax/">ajax</a></li></ul>
+                        <ul class="unstyled radius-tag -list"><li class="unstyled radius-tag -list-item"><a class="unstyled radius-tag -list-link" href="/tags/callack/">callack</a></li></ul>
                     
                     </div>
                 </h1>
 
-                <h2 id="手写ajax"><a href="#手写ajax" class="headerlink" title="手写ajax"></a>手写ajax</h2><ul>
-<li>使用XMLHttpRequest对象</li>
+                <h2 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h2><ul>
+<li>回调函数就是一段可执行的代码段。</li>
+<li><p>在javaScript中函数也是对象的一中，将函数传递给另一个函数时，这个函数就是回调函数。</p>
+</li>
+<li><p>回调函数的特点</p>
+</li>
+<li>是一个闭包，就是说可以访问外层定义的变量。</li>
+<li>回调函数中的this 是在回调函数调用时this的执行上下文并不是回调函数定义时的那个上下文，而是调用它的函数所在的上下文。</li>
 </ul>
-<pre><code>window.ajax = function(options){
-  // url,method,headers,body,sucessFn,failFn
-  let url = options.url;
-  let method = options.method;
-  let headers = options.headers;
-  let body = options.body;
-  let succeeFn = options.successFn;
-  let failFn = options.failFn
-
-  let request = new XMLHttpRequest();
-  request.open(method,url);
-   console.log( typeof headers)
-  for(let key in headers){
-   let value = headers[key]
-   request.setRequestHeader(key,value)
-  }
-
-
-  request.send(body)
-
-
-  request.onreadystatechange = ()=&gt;{
-    if(request.readyState === 4){
-     // 请求完成
-      if(request.status &gt;= 200 &amp;&amp; request.status &lt;300){
-        // 请求成功
-        sucessFn();
-
-      }else if(request.status &gt;= 400) {
-       // 请求是失败
-        failFn();
-      }
-    }
-  }
-} 
-
-btn.addEventListener(&#39;click&#39;,()=&gt;{
-  console.log(&quot;ajax&quot;)
-  window.ajax({
-    &quot;url&quot;:&#39;www.baidu.com&#39;,
-    &quot;method&quot;:&quot;post&quot;,
-    &quot;headers&quot;:{
-    &quot;frank&quot;:12
-  },
-    &quot;body&quot;:&quot;hih&quot;,
-    &quot;sucessFn&quot;:()=&gt;{
-      console.log(&quot;chengg&quot;)
-    },
-    &quot;failFn&quot;:()=&gt;{
-      console.log(&quot;failed&quot;)
-    }
-  });
-})
-
-</code></pre><h2 id="符合Promise规划ajax"><a href="#符合Promise规划ajax" class="headerlink" title="符合Promise规划ajax"></a>符合Promise规划ajax</h2><ul>
-<li>返回promist对象，回调函数使用then ;第一个函数为响应成功指向 ，第二个为响应失败执行。</li>
+<p>##　 使用场景</p>
+<ul>
+<li>异步编程。</li>
+<li>事件监听、处理。</li>
+<li>setTimeout、setInterval方法。</li>
+<li>通用功能，简化逻辑。</li>
 </ul>
-<pre><code>window.ajax = function(options) {
-return new Promise(function(resolve,reject){
-   let url = options.url;
-  let method = options.method;
-  let headers = options.headers;
-  let body = options.body;
-  let request = new XMLHttpRequest();
-  request.open(method, url);
-  console.log(typeof headers)
-  for (let key in headers) {
-    let value = headers[key]
-    request.setRequestHeader(key, value)
-  }
-  request.send(body)
-  request.onreadystatechange = () =&gt; {
-    if (request.readyState === 4) {
-      // 请求完成
-      if (request.status &gt;= 200 &amp;&amp; request.status &lt; 300) {
-        // 请求成功
-        resolve();
 
-      } else if (request.status &gt;= 400) {
-        // 请求是失败
-        reject();
-      }
-    }
-  }
-})
-}
-
-btn.addEventListener(&#39;click&#39;, () =&gt; {
-  console.log(&quot;ajax&quot;)
-  window.ajax({
-    &quot;url&quot;: &#39;www.baidu.com&#39;,
-    &quot;method&quot;: &quot;post&quot;,
-    &quot;headers&quot;: {
-      &quot;frank&quot;: 12
-    },
-    &quot;body&quot;: &quot;hih&quot;,
-
-  }).then(()=&gt;{
-    console.log(&quot;成功&quot;);
-  },
-         ()=&gt;{
-    console.log(&quot;失败&quot;);
-  });
-})
-</code></pre>
             <!-- / the end of articles -->
         </div>
         <!-- / left section -->
@@ -244,16 +153,12 @@ btn.addEventListener(&#39;click&#39;, () =&gt; {
         <hr/>
         <div class="next-prev-post-section">
             
-                <a href="/2019/01/08/javaScript回调函数/" class="styled-border">
-                    ←
-                    javaScript回调函数
-                    
-                </a>
+                <a href="#"></a>
             
             
-                <a href="/2018/12/13/实现一个jQuery的API/" class="styled-border">
+                <a href="/2019/01/08/手写ajax/" class="styled-border">
                     
-                    实现一个jQuery的API
+                    手写ajax
                     →
                 </a>
             
