@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="知易行难">
 <meta property="og:description" content="手写ajax 使用XMLHttpRequest对象  window.ajax = function(options){   // url,method,headers,body,sucessFn,failFn   let url = options.url;   let method = options.method;   let headers = options.headers;   let">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-08T14:47:06.768Z">
+<meta property="og:updated_time" content="2019-01-08T17:07:04.415Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="手写ajax">
 <meta name="twitter:description" content="手写ajax 使用XMLHttpRequest对象  window.ajax = function(options){   // url,method,headers,body,sucessFn,failFn   let url = options.url;   let method = options.method;   let headers = options.headers;   let">
@@ -107,111 +107,109 @@
                 <h2 id="手写ajax"><a href="#手写ajax" class="headerlink" title="手写ajax"></a>手写ajax</h2><ul>
 <li>使用XMLHttpRequest对象</li>
 </ul>
-<pre><code>window.ajax = function(options){
-  // url,method,headers,body,sucessFn,failFn
-  let url = options.url;
-  let method = options.method;
-  let headers = options.headers;
-  let body = options.body;
-  let succeeFn = options.successFn;
-  let failFn = options.failFn
+<pre class=" language-javascript"><code class="language-javascript">window<span class="token punctuation">.</span>ajax <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// url,method,headers,body,sucessFn,failFn</span>
+  <span class="token keyword">let</span> url <span class="token operator">=</span> options<span class="token punctuation">.</span>url<span class="token punctuation">;</span>
+  <span class="token keyword">let</span> method <span class="token operator">=</span> options<span class="token punctuation">.</span>method<span class="token punctuation">;</span>
+  <span class="token keyword">let</span> headers <span class="token operator">=</span> options<span class="token punctuation">.</span>headers<span class="token punctuation">;</span>
+  <span class="token keyword">let</span> body <span class="token operator">=</span> options<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
+  <span class="token keyword">let</span> succeeFn <span class="token operator">=</span> options<span class="token punctuation">.</span>successFn<span class="token punctuation">;</span>
+  <span class="token keyword">let</span> failFn <span class="token operator">=</span> options<span class="token punctuation">.</span>failFn
 
-  let request = new XMLHttpRequest();
-  request.open(method,url);
-   console.log( typeof headers)
-  for(let key in headers){
-   let value = headers[key]
-   request.setRequestHeader(key,value)
-  }
+  <span class="token keyword">let</span> request <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  request<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span>method<span class="token punctuation">,</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> <span class="token keyword">typeof</span> headers<span class="token punctuation">)</span>
+  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> key <span class="token keyword">in</span> headers<span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token keyword">let</span> value <span class="token operator">=</span> headers<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+   request<span class="token punctuation">.</span><span class="token function">setRequestHeader</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span>value<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  request<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span>
+  request<span class="token punctuation">.</span>onreadystatechange <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>readyState <span class="token operator">===</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+     <span class="token comment" spellcheck="true">// 请求完成</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>status <span class="token operator">>=</span> <span class="token number">200</span> <span class="token operator">&amp;&amp;</span> request<span class="token punctuation">.</span>status <span class="token operator">&lt;</span><span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 请求成功</span>
+        <span class="token function">sucessFn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>status <span class="token operator">>=</span> <span class="token number">400</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token comment" spellcheck="true">// 请求是失败</span>
+        <span class="token function">failFn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span> 
 
+btn<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"ajax"</span><span class="token punctuation">)</span>
+  window<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token string">"url"</span><span class="token punctuation">:</span><span class="token string">'www.baidu.com'</span><span class="token punctuation">,</span>
+    <span class="token string">"method"</span><span class="token punctuation">:</span><span class="token string">"post"</span><span class="token punctuation">,</span>
+    <span class="token string">"headers"</span><span class="token punctuation">:</span><span class="token punctuation">{</span>
+    <span class="token string">"frank"</span><span class="token punctuation">:</span><span class="token number">12</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">"body"</span><span class="token punctuation">:</span><span class="token string">"hih"</span><span class="token punctuation">,</span>
+    <span class="token string">"sucessFn"</span><span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"chengg"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">"failFn"</span><span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"failed"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
 
-  request.send(body)
-
-
-  request.onreadystatechange = ()=&gt;{
-    if(request.readyState === 4){
-     // 请求完成
-      if(request.status &gt;= 200 &amp;&amp; request.status &lt;300){
-        // 请求成功
-        sucessFn();
-
-      }else if(request.status &gt;= 400) {
-       // 请求是失败
-        failFn();
-      }
-    }
-  }
-} 
-
-btn.addEventListener(&#39;click&#39;,()=&gt;{
-  console.log(&quot;ajax&quot;)
-  window.ajax({
-    &quot;url&quot;:&#39;www.baidu.com&#39;,
-    &quot;method&quot;:&quot;post&quot;,
-    &quot;headers&quot;:{
-    &quot;frank&quot;:12
-  },
-    &quot;body&quot;:&quot;hih&quot;,
-    &quot;sucessFn&quot;:()=&gt;{
-      console.log(&quot;chengg&quot;)
-    },
-    &quot;failFn&quot;:()=&gt;{
-      console.log(&quot;failed&quot;)
-    }
-  });
-})
-
-</code></pre><h2 id="符合Promise规划ajax"><a href="#符合Promise规划ajax" class="headerlink" title="符合Promise规划ajax"></a>符合Promise规划ajax</h2><ul>
+</code></pre>
+<h2 id="符合Promise规划ajax"><a href="#符合Promise规划ajax" class="headerlink" title="符合Promise规划ajax"></a>符合Promise规划ajax</h2><ul>
 <li>返回promist对象，回调函数使用then ;第一个函数为响应成功指向 ，第二个为响应失败执行。</li>
 </ul>
-<pre><code>window.ajax = function(options) {
-return new Promise(function(resolve,reject){
-   let url = options.url;
-  let method = options.method;
-  let headers = options.headers;
-  let body = options.body;
-  let request = new XMLHttpRequest();
-  request.open(method, url);
-  console.log(typeof headers)
-  for (let key in headers) {
-    let value = headers[key]
-    request.setRequestHeader(key, value)
-  }
-  request.send(body)
-  request.onreadystatechange = () =&gt; {
-    if (request.readyState === 4) {
-      // 请求完成
-      if (request.status &gt;= 200 &amp;&amp; request.status &lt; 300) {
-        // 请求成功
-        resolve();
+<pre class=" language-javascript"><code class="language-javascript">window<span class="token punctuation">.</span>ajax <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span>reject<span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token keyword">let</span> url <span class="token operator">=</span> options<span class="token punctuation">.</span>url<span class="token punctuation">;</span>
+  <span class="token keyword">let</span> method <span class="token operator">=</span> options<span class="token punctuation">.</span>method<span class="token punctuation">;</span>
+  <span class="token keyword">let</span> headers <span class="token operator">=</span> options<span class="token punctuation">.</span>headers<span class="token punctuation">;</span>
+  <span class="token keyword">let</span> body <span class="token operator">=</span> options<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
+  <span class="token keyword">let</span> request <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  request<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span>method<span class="token punctuation">,</span> url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> headers<span class="token punctuation">)</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> key <span class="token keyword">in</span> headers<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> value <span class="token operator">=</span> headers<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+    request<span class="token punctuation">.</span><span class="token function">setRequestHeader</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  request<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span>
+  request<span class="token punctuation">.</span>onreadystatechange <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>request<span class="token punctuation">.</span>readyState <span class="token operator">===</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// 请求完成</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>request<span class="token punctuation">.</span>status <span class="token operator">>=</span> <span class="token number">200</span> <span class="token operator">&amp;&amp;</span> request<span class="token punctuation">.</span>status <span class="token operator">&lt;</span> <span class="token number">300</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 请求成功</span>
+        <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-      } else if (request.status &gt;= 400) {
-        // 请求是失败
-        reject();
-      }
-    }
-  }
-})
-}
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>request<span class="token punctuation">.</span>status <span class="token operator">>=</span> <span class="token number">400</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 请求是失败</span>
+        <span class="token function">reject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
 
-btn.addEventListener(&#39;click&#39;, () =&gt; {
-  console.log(&quot;ajax&quot;)
-  window.ajax({
-    &quot;url&quot;: &#39;www.baidu.com&#39;,
-    &quot;method&quot;: &quot;post&quot;,
-    &quot;headers&quot;: {
-      &quot;frank&quot;: 12
-    },
-    &quot;body&quot;: &quot;hih&quot;,
+btn<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"ajax"</span><span class="token punctuation">)</span>
+  window<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token string">"url"</span><span class="token punctuation">:</span> <span class="token string">'www.baidu.com'</span><span class="token punctuation">,</span>
+    <span class="token string">"method"</span><span class="token punctuation">:</span> <span class="token string">"post"</span><span class="token punctuation">,</span>
+    <span class="token string">"headers"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token string">"frank"</span><span class="token punctuation">:</span> <span class="token number">12</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">"body"</span><span class="token punctuation">:</span> <span class="token string">"hih"</span><span class="token punctuation">,</span>
 
-  }).then(()=&gt;{
-    console.log(&quot;成功&quot;);
-  },
-         ()=&gt;{
-    console.log(&quot;失败&quot;);
-  });
-})
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"成功"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+         <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"失败"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
 </code></pre>
+
             <!-- / the end of articles -->
         </div>
         <!-- / left section -->
