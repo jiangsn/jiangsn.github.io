@@ -1,110 +1,76 @@
 <!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
+<html lang=>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
   
-  <title>HTTP学习记录 | 知易行难</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="HTTP协议的作用就是浏览器和服务器的之间通信的标准。（就知道理解双方的意思）  请求部分浏览器发起请求的 ，服务器响应请求。请求分为四部分第一部分：请求的方法 如（GET POST DELETE .）等常用的GET 和 POST 和HTTP协议的版本第二部分：以键值对的形式，请求的地址（域名），所使用的代理（也就是用什么去发起请求的），可以接受的内容，字符接 etc第三部分：就是一个换行 。目的">
-<meta name="keywords" content="HTTP">
-<meta property="og:type" content="article">
-<meta property="og:title" content="HTTP学习记录">
-<meta property="og:url" content="http://yoursite.com/2018/10/28/HTTP学习记录/index.html">
-<meta property="og:site_name" content="知易行难">
-<meta property="og:description" content="HTTP协议的作用就是浏览器和服务器的之间通信的标准。（就知道理解双方的意思）  请求部分浏览器发起请求的 ，服务器响应请求。请求分为四部分第一部分：请求的方法 如（GET POST DELETE .）等常用的GET 和 POST 和HTTP协议的版本第二部分：以键值对的形式，请求的地址（域名），所使用的代理（也就是用什么去发起请求的），可以接受的内容，字符接 etc第三部分：就是一个换行 。目的">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-28T10:01:58.788Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HTTP学习记录">
-<meta name="twitter:description" content="HTTP协议的作用就是浏览器和服务器的之间通信的标准。（就知道理解双方的意思）  请求部分浏览器发起请求的 ，服务器响应请求。请求分为四部分第一部分：请求的方法 如（GET POST DELETE .）等常用的GET 和 POST 和HTTP协议的版本第二部分：以键值对的形式，请求的地址（域名），所使用的代理（也就是用什么去发起请求的），可以接受的内容，字符接 etc第三部分：就是一个换行 。目的">
+    <link rel="icon" href="/favicon.ico">
   
-    <link rel="alternate" href="/atom.xml" title="知易行难" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-  <link rel="stylesheet" href="/css/tocas.css">
-  <link rel="stylesheet" href="/css/animate.css">
-  <link rel="stylesheet" href="/css/style.css">
-  <style type="text/css">
-    a.title-link:hover{
-        color: #34b2db !important;
-    }
-
-    a.title-link:active{
-        color: #2075c1 !important;
-    }
-
-    #menu-color-id{
-        background : #f7f7f7;
-    }
-
-    #menu-color-id a{
-        color: #5a5a5a;
-    }
-  </style>
-  <script src="/js/tocas.js"></script>
-  
-
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head></html>
+    
+  <title>HTTP学习记录 | jiangx</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/lib/jquery.fancybox.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 <body>
-<!-- navigation -->
+  <header>
+  <div class="header-container">
+    <a class="logo" href="/">
+      <span>jiangx</span>
+    </a>
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+</header>
 
-<div class="ts fluid basic link big menu" id="menu-color-id">
-
-    <!-- ejs : align to post page or index page -->
-        
-            <div class="ts very narrow container">
-        
-
-        
-            <a class="item" href="/">Home</a>
-        
-            <a class="item" href="/archives">Archives</a>
-        
-            <a class="item" href="/">Resume</a>
-        
-    </div>
-</div>
-<!-- the end of navigation -->
-
-<!-- big bang title -->
-<div class="ts padded horizontally fitted fluid slate" style="background-color: #f7f7f7;">
-    <!-- ejs : align to post page or index page -->
-    
-        <div class="ts very narrow container">
-    
-        <!-- Title -->
-        <h1 class="ts eleven wide column header be-center-h1">
-            <span style="color: #404040;" id="big-title">知易行难</span>
-            <div class="sub header" id="slogan-bar" style=" margin-top: 15px; color: #404040;"></div>
-        </h1>
-        <!-- the end of title -->
-    </div>
-</div>
-<!-- the end of big bang title -->
-</body>
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-
-<!-- main section -->
-<div class="ts text container">
-        <!-- left section -->
-        <div class="column" style=" padding: 35px; ">
-            <!-- Articles -->
+  <main id="post">
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h1>HTTP学习记录</h1>
+          <div class="post-meta">
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2018/10/28</time>
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
                 
-                <h1 class="ts header">
-                    <span style="color: #333;">HTTP学习记录</span>
-                    <div class="sub header" style="color: #808080;">Publish: 2018/10/28 
-                     &nbsp;&nbsp;
-                        <ul class="unstyled radius-tag -list"><li class="unstyled radius-tag -list-item"><a class="unstyled radius-tag -list-link" href="/tags/HTTP/">HTTP</a></li></ul>
-                    
-                    </div>
-                </h1>
+               
+  <a href="/tags/#HTTP" class="tag">HTTP</a>
 
-                <pre class=" language-block"><code class="language-block">HTTP协议的作用就是浏览器和服务器的之间通信的标准。（就知道理解双方的意思）
+
+            
+          </div>
+          <pre class=" language-block"><code class="language-block">HTTP协议的作用就是浏览器和服务器的之间通信的标准。（就知道理解双方的意思）
 </code></pre>
 <h2 id="请求部分"><a href="#请求部分" class="headerlink" title="请求部分"></a>请求部分</h2><p>浏览器发起请求的 ，服务器响应请求。<br>请求分为四部分<br>第一部分：请求的方法 如（GET POST DELETE .）等常用的GET 和 POST 和HTTP协议的版本<br>第二部分：以键值对的形式，请求的地址（域名），所使用的代理（也就是用什么去发起请求的），可以接受的内容，字符接 etc<br>第三部分：就是一个换行 。目的是为了第二部分和第四部分（始终存在）<br>第四部分：传给服务器的数据（如果有需要）</p>
 <hr>
@@ -127,79 +93,96 @@
 <li>-H 为请求头添加信息（以键值对的形式）<br><code>`</code></li>
 </ul>
 
-            <!-- / the end of articles -->
-        </div>
-        <!-- / left section -->
-        
-        
-            <hr/>
-            <div id="disqus_thread" style=" margin-top: 15px; margin-bottom: 25px; "></div>
-            <script>
-                /**
-                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-                /*
-                var disqus_config = function () {
-                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                };
-                */
-                (function() { // DON'T EDIT BELOW THIS LINE
-                var d = document, s = d.createElement('script');
-                s.src = 'https://morgan-hexo-theme.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        
-
-        <!-- Next Post and Prev Post -->
-        
-        <hr/>
-        <div class="next-prev-post-section">
-            
-                <a href="/2018/10/29/HTML常用标签/" class="styled-border">
-                    ←
-                    HTML常用标签
-                    
-                </a>
-            
-            
-                <a href="/2018/10/27/Git基础命令学习/" class="styled-border">
-                    
-                    Git基础命令学习
-                    →
-                </a>
-            
-        </div>
-        
-</div>
-<script type="text/javascript">
-    let img = document.getElementsByTagName("img");
-    for(let i = 0; i < img.length; i++){
-        img[i].className += " ts fluid image";
-    }
-</script>
-<!-- / main section -->
-
-<!-- copyright -->
-<div class="ts attached secondary segment">
-    <div class="ts narrow container">
-        <br>
-        <div class="ts large center aligned header">
-            Powered by Hexo, Theme designs by @hpcslag.
-            <div class="smaller sub header">
-                Style-Framework Tocas-UI designs by @yamioldmel 
-            </div>
-        </div>
-        <br>
-    </div>
-</div>
-<!-- / copyright -->
-<script type="text/javascript">
+        </section>
+    </article>
     
-    const slogans = ["Hallo, dit is mijn blog","嗨，這是我的博客!","안녕하세요, 제 블로그입니다.","Hi, This is my blog!","こんにちは、私のブログへようこそ!","مرحبا، مرحبا بك في مدونتي"];
-</script>
-<script src="/js/script.js"></script>
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h1>目录</h1>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#请求部分"><span class="toc-number">1.</span> <span class="toc-text">请求部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#响应部分"><span class="toc-number">2.</span> <span class="toc-text">响应部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用Chrome查看"><span class="toc-number">3.</span> <span class="toc-text">用Chrome查看</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在命令行下工作的文件传输工具。"><span class="toc-number">4.</span> <span class="toc-text">在命令行下工作的文件传输工具。</span></a></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
 
+
+
+  <footer>
+  <div class="copyright">
+    <div>
+      &copy; 2019 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </div>
+    <div>
+      Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+  
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+      
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<script src="/lib/jquery.fancybox.min.js"></script>
+
+
+</body>
+</html>
